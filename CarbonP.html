@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon</title>
+    <style>
+        .container{
+            position: absolute;
+            top:0;
+            left:0;
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(150deg, rgb(49, 253, 49) 45%,rgb(0, 142, 0), green);
+        }
+        #Calc{
+            position: absolute;
+            top: 26vh;
+            left: 65vh;
+            height: 70vh;
+            width: 70vh;
+            background-image: linear-gradient(60deg, rgb(105, 105, 105),rgb(4, 4, 4));
+            border: 5px solid whitesmoke ;
+            border-radius: 10%;
+        }
+        .ad{
+            top: 15vh;
+            left: 70vh;
+            position: absolute;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: 900;
+        }
+        form{
+            margin: 15px;
+            color: white;
+            line-height: 22px;
+        }
+        #result{
+            background-image: linear-gradient(30deg,white,rgb(169, 229, 248));
+            height: 15vh;
+            width: 90%;
+            margin-left: 15px;
+            border: 3px solid rgb(147, 184, 248);
+            border-radius: 5%;
+            padding: 10px;
+        }
+        hr{
+            border-color: blue;
+        }
+        .out{
+            background-color: azure;
+            border: 1px solid black;
+            width: 30vh;
+            height: 20px;
+            display: inline-block;
+        }
+        #btn{
+            left: 50vh;
+            position: relative;
+            margin-bottom:10px ;
+            background-color: rgb(191, 255, 255);
+            border: 2 px solid blue;
+            border-radius: 20%;
+            height: 40px;
+            width: 70px;
+        }
+
+        @media (max-width: 600px){
+            #Calc{
+                top: 12vh;
+                left: 4vh;
+                height: 50vh;
+                width: 30vh;
+            }
+            
+            .ad{
+                top: 5vh;
+                left: 6vh;
+                font-size: large;
+            }
+            form{
+                margin: 15px;
+                line-height: 15px;
+                font-size: smaller;
+            }
+            input{
+                width: 60px;
+                height: 10px;
+                font-size: smaller;
+            }
+            #btn{
+                left: 20vh;
+                font-size:x-small;
+                margin-bottom:5px ;
+                border-radius: 20%;
+                height: 30px;
+                width: 60px;
+            }
+            .out{
+                width: 20vh;
+                height: 15px;
+                display: inline-block;
+            }
+            #result{
+                height: 16vh;
+                width: 25vh;
+                margin-left: 15px;
+                font-size:x-small;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="ad">
+            What is yours carbon Footprint?
+        </p>
+        <div id="Calc">
+            <form>
+                <label>Electricity Consumption in KWh/day:</label> <input type="text" id="E" > <br>
+                <label>Mode of transportation: </label><select id="transport">
+                    <option>Bus</option>
+                    <option>Car </option>
+                    <option>Train</option>
+                </select> <br>
+                <label> Kilometers travelled per day: <input type="text" id="dist" > </label><br>
+                <label>Food Consumption in kg/day :</label> <br>
+                <ul style="margin: 0;">
+                <li>Beef: <input type="text" id="beef"> </li>
+                <li>Mutton: <input type="text" id="mut"> </li>
+                <li>Chicken: <input type="text" id="ch"> </li>
+                <li>Wheat: <input type="text" id="wh"> </li>
+                <li>Rice: <input type="text" id="rice"> </li>
+                <li>Veg: <input type="text" id="veg"> </li>
+                </ul>
+                <label>Daily Waste Generation: </label><input type="text" id="waste" >
+            </form>
+            <button id="btn" onclick="takeValue()" type="submit">
+                calculate
+            </button>
+            <div id="result">
+                Daily Carbon Emission : <div class="out" id="d"> </div> <hr>
+                Monthly Carbon Emission : <div class="out" id="m"></div> <hr>
+                Yearly Carbon Emission : <div class="out" id="y"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        const EF_Electricity = 0.59;//kg per kwh
+
+        const EF_car = 0.19;// kg per km
+        const EF_bus = 0.056;
+        const EF_train=0.021;
+
+        const EF_Beef = 36;// kg per kg
+        const EF_rice = 2.0;
+        const EF_wheat = 0.7;
+        const EF_chicken = 6.9;
+        const EF_mutton = 39.2;
+        const EF_veg = 0.137;
+
+        const EF_waste = 0.8 // per kg
+
+        let e,vehicle, beef, ch,rice,wh, mut, veg, waste, dis;
+        let emit = []
+        let e_perday, e_permonth, e_peryear;
+
+        let e_d = document.getElementById("d");
+        let e_m = document.getElementById("m");
+        let e_y = document.getElementById("y");
+
+        function takeValue(){
+            e = document.getElementById("E").value;
+            e = (isNaN(e) || e=='')? 0 : parseFloat(e); // for electricity
+            emit.push(e*EF_Electricity);
+
+            waste = document.getElementById("waste").value;
+            waste = (isNaN(waste) || waste=='')? 0 : parseFloat(waste); // for waste
+            emit.push(waste*EF_waste);
+
+            beef = document.getElementById("beef").value;
+            beef = (isNaN(beef) || beef=='')? 0 : parseFloat(beef); // for beef
+            emit.push(beef*EF_Beef);
+
+            rice = document.getElementById("rice").value;
+            rice = (isNaN(rice) || rice=='')? 0 : parseFloat(rice); // for rice
+            emit.push(rice*EF_rice);
+
+            mut= document.getElementById("mut").value;
+            mut = (isNaN(mut) ||mut =='')? 0 : parseFloat(mut); // for mutton
+            emit.push(mut*EF_mutton);
+
+            veg = document.getElementById("veg").value;
+            veg = (isNaN(veg ) || veg=='')? 0 : parseFloat(veg); // for veg
+            emit.push(veg*EF_veg);
+
+            ch = document.getElementById("ch").value;
+            ch = (isNaN(ch) || ch=='')? 0 : parseFloat(ch); // for chicken
+            emit.push(ch*EF_chicken);
+
+            wh = document.getElementById("wh").value;
+            wh = (isNaN(wh ) || wh =='')? 0 : parseFloat(wh); // for wheat
+            emit.push(wh*EF_wheat);
+
+            vehicle = document.getElementById("transport").value;
+            dis = document.getElementById("dist").value;
+            dis = (isNaN(dis) || dis=='')? 0 : parseFloat(dis); // for transport
+            switch(document.getElementById("transport").value){
+                case 'bus': emit.push(dis*EF_bus);
+                case 'train': emit.push(dis*EF_train);
+                case 'car': emit.push(dis*EF_car);
+                default : emit.push(0);
+            }
+
+            e_perday = 0;
+            emit.forEach(x=>{
+                e_perday+=x;
+            })
+
+            e_permonth= e_perday * 30;
+
+            e_peryear = e_perday* 365;
+            printResult();
+
+            alert(`Per day you use ${e} kwh electricity and travel ${dis} km by ${vehicle} and generate ${waste} kg waste.  you also eat ${beef + rice + mut + veg + ch + wh} kg foods.\n Yoour daily emission is ${e_perday} kg`);
+        }
+        function printResult() {
+            e_d.innerHTML = e_perday +" kg";
+            e_m.innerHTML = e_permonth +" kg";
+            e_y.innerHTML = e_peryear +" kg";
+
+            const d = document.querySelector("form");
+            form.addEventListener('submit', function(event){
+                event.preventDefault();
+        });
+        }
+
+    </script>
+</body>
+</html>
