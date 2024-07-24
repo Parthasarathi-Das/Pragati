@@ -5,6 +5,13 @@
     width: 100vw;
     height: 60px;
 }
+#bar{
+    position: absolute;
+    left: 85%;
+    top: 0px;
+    padding: 10px;
+    display: none;
+}
 
 .trans {
     background-color: rgba(44, 43, 43, 0.3);
@@ -321,9 +328,45 @@
 
 
 
-@media (max-width: 600px){
+@media (max-width: 650px){
+    .nav{
+        width: 100%;
+    }
+
+    #bar{
+        position: absolute;
+        right: auto;
+        top: 0px;
+        display: block;
+        padding: auto;
+        z-index: 999;
+    }
+    .nav ul{
+        position: absolute;
+        top: 0;
+         padding-bottom: 5%;
+        left: 0;
+        height: auto;
+        width: 100%;
+        display: none;
+        background-color: black;
+        text-align: center;
+        z-index: 998;
+    }
+    .trans ul{
+        background-color:rgba(44, 43, 43, 0.3) ;
+    }
+    .nav ul li{
+        display: block;
+        margin-right:50vw ;
+        /* text-align: center; */  
+    }
+    .nav ul li a{
+        font-size: 20px;
+        display: block;
+    }
     .deforest{
-        width: 95%;
+        width: 90%;
         height: auto;
     }
     .deforest canvas{
@@ -358,5 +401,8 @@
         width: 60vw;
         height: 5vh;
         font-size: medium;
+    }
+    .back-video{
+        display: none;
     }
 }
