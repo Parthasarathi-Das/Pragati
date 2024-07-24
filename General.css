@@ -430,6 +430,7 @@ footer{
     #bar{
         position: absolute;
         right: auto;
+        padding: 10px;
         top: 0px;
         display: block;
         padding: auto;
@@ -453,6 +454,7 @@ footer{
     .nav ul li{
         display: block;
         margin-right:50vw ;
+        width: auto;
         /* text-align: center; */  
     }
     .nav ul li a{
