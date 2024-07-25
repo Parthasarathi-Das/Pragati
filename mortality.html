@@ -16,8 +16,8 @@
     <div class="nav" style="background-color: black;">
         <ul>
             <li><a href="home.html">home</a></li>
-            <li class="active"><a href="#">Causes</a></li>
-            <li><a href="#">Effect</a></li>
+            <li ><a href="Causes.html">Causes</a></li>
+            <li class="active"><a href="effect.html">Effect</a></li>
             <li><a href="#">Solution</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Events</a></li>
@@ -29,7 +29,7 @@
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
     </div>
-    <div class="para" style="margin-top: 100px;">
+    <div  style="margin-top: 100px;">
         <h1>The effect of global warming on mortality</h1>
         <p>
             There is a significant relationship between ambient temperature and mortality. In healthy individuals with
@@ -41,10 +41,7 @@
             above 27 °C, the daily mortality rate increases more rapidly per degree rise compared to when it drops below
             27 °C.</p>
     </div>
-    <div class="deforest">
-        <canvas id="deforest"></canvas>
-    </div>
-    <div class="deforest">
+    <div class="mychart">
         <canvas id="eforest"></canvas>
     </div>
     <div class="para">
@@ -54,6 +51,9 @@
             generally hovered between 0.5 and 2 deaths per million people, with spikes in certain years.
             Overall, a total of more than 14,000 Americans have died directly from heat-related causes since 1979,
             according to death certificates.</p>
+    </div>
+    <div class="mychart" >
+        <canvas id="piforest"></canvas>
     </div>
     <div class="para">
         <h1>World's largest study of global climate related mortality links 5 million deaths a year to abnormal
@@ -70,10 +70,7 @@
             0.26C per decade.
         </p>
     </div>
-    <div class="deforest" style="margin-left: 10vw;">
-        <canvas id="piforest"></canvas>
-    </div>
-    <div>
+    <div class="para">
         <h1>The future</h1>
         <p>
             Protecting natural ecosystems and sustainably managing and re-establishing forests are important ways to
@@ -84,6 +81,9 @@
             from
             fossil fuels – coal, oil and gas. If we do only the former and not the latter, we risk transforming more and
             more of our carbon sinks into carbon sources as climate change progresses.</p>
+    </div>
+    <div class="mychart">
+        <canvas id="deforest"></canvas>
     </div>
     <footer>
         <div class="footer-container">
@@ -114,20 +114,16 @@
         const pf = document.getElementById('piforest').getContext('2d');
 
         new Chart(df, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['1990s', '2000s', '2010s'],
+                labels: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019'],
                 datasets: [{
-                    label: 'Global Deforestation Rate per Decade in million hectares',
-                    data: [158, 151, 110],
-                    borderWidth: 1,
-                    backgroundColor: 'brown'
-                },
-                {
-                    label: 'Net Change in forest area in million hectares\n(Deforestation - Forest Regrowth)',
-                    data: [78, 52, 47],
-                    borderWidth: 1,
-                    backgroundColor: 'orange'
+                    label: 'Number od deaths',
+                    data: [1050,1200,1500,1800,2000,2200,2500,2800,3000,3200],
+                    borderWidth: 3,
+                    backgroundColor: 'crimson',
+                    borderColor: 'crimson',
+                    pointBackgroundColor: 'pink'
                 }
                 ]
             },
@@ -136,25 +132,42 @@
                     y: {
                         beginAtZero: true
                     }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Heat related mortality by year',
+                    }
                 }
             }
         });
         new Chart(edf, {
             type: 'bar',
             data: {
-                labels: ['Luxembourg', 'Brazil', 'Indonesia', 'Taiwan', 'Belgium', 'Netherlands', 'Switzerland', 'Germany', 'France', 'Spain', 'Sweden', 'United Kingdom', 'Japan', 'United States', 'China', 'South Africa', 'India'],
+                labels: ['Floods','Droughts','Storms','Heatwaves','Wildfires','Landslides'],
                 datasets: [{
-                    label: 'Per capita Carbon-dioxide emissions from deforestation for food production',
-                    data: [2.78, 2.71, 1.24, 1.08, 0.97, 0.95, 0.64, 0.51, 0.42, 0.42, 0.41, 0.39, 0.38, 0.35, 0.14, 0.09, 0.08],
+                    label: 'Number of death',
+                    data: [5500,2000,3500,2200,1000,800],
                     borderWidth: 1,
-                    backgroundColor: 'green'
+                    backgroundColor: ['blue','yellow','aqua','red','orange','gray']
                 }
                 ]
             },
             options: {
-                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        position: 'none',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Mortality by climate related disaster',
+                    }
+                },
                 scales: {
-                    x: {
+                    y: {
                         beginAtZero: true
                     }
                 }
@@ -163,12 +176,12 @@
         new Chart(pf, {
             type: 'pie',
             data: {
-                labels: ['Commodity-driven Deforestation', 'Urbanization', 'Agriculture', 'Forestry Production', 'Wildfire'],
+                labels: ['Heat Stress','Respiratory Issues','Injuries','Other Causes'],
                 datasets: [{
-                    label: 'Various reasons',
-                    data: [73, 12, 9, 4, 2],
+                    label: 'number of deaths',
+                    data: [2200,1500,1000,1600],
                     borderWidth: 1,
-                    backgroundColor: ['blue', 'yellow', 'green', 'brown', 'orange']
+                    backgroundColor: ['red','yellow','orange','green']
                 }
                 ]
             },
@@ -180,7 +193,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Various Reasons of deforestation',
+                        text: 'Mortality by climate related causes',
                     }
                 }
             }

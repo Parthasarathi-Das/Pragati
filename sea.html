@@ -16,8 +16,8 @@
     <div class="nav" style="background-color: black;">
         <ul>
             <li><a href="home.html">home</a></li>
-            <li class="active"><a href="#">Causes</a></li>
-            <li><a href="#">Effect</a></li>
+            <li ><a href="Causes.html">Causes</a></li>
+            <li class="active"><a href="effect.html">Effect</a></li>
             <li><a href="#">Solution</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Events</a></li>
@@ -29,7 +29,7 @@
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
     </div>
-    <div class="para" style="margin-top: 100px;">
+    <div style="margin-top: 100px;">
         <h1>Sea Level Rise</h1>
         <p>
             Sea level rise is an increase in the level of the world’s oceans due to the effects of global warming.
@@ -37,11 +37,8 @@
             heat-trapping gasses into the atmosphere. The oceans then absorb the majority of this heat. As water becomes
             warmer, it expands. This results in ocean levels rising worldwide.</p>
     </div>
-    <div class="deforest">
-        <canvas id="deforest"></canvas>
-    </div>
-    <div class="deforest">
-        <canvas id="eforest"></canvas>
+    <div class="mychart">
+        <canvas id="st"></canvas>
     </div>
     <div class="para">
         <h1>Climate Change: Global Sea Level</h1>
@@ -70,10 +67,13 @@
             meters) in the next 30 years. That’s equal to the total rise in the region seen over the past 100 years.
         </p>
     </div>
-    <div class="deforest" style="margin-left: 10vw;">
-        <canvas id="piforest"></canvas>
+    <div class="mychart">
+        <canvas id="so"></canvas>
     </div>
-    <div>
+    <div class="mychart" style="margin-left: 10vw;">
+        <canvas id="pi"></canvas>
+    </div>
+    <div class="para">
         <h1>The future</h1>
         <p>
             Protecting natural ecosystems and sustainably managing and re-establishing forests are important ways to
@@ -109,29 +109,34 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const df = document.getElementById('deforest');
-        const edf = document.getElementById('eforest');
-        const pf = document.getElementById('piforest').getContext('2d');
+        const st = document.getElementById('st');
+        const so = document.getElementById("so");
+        const pf = document.getElementById('pi').getContext('2d');
 
-        new Chart(df, {
-            type: 'bar',
+        new Chart(st, {
+            type: 'line',
             data: {
-                labels: ['1990s', '2000s', '2010s'],
+                labels: ['1880', '1900', '1920', '1940', '1960', '1980', '2000', '2020'],
                 datasets: [{
-                    label: 'Global Deforestation Rate per Decade in million hectares',
-                    data: [158, 151, 110],
-                    borderWidth: 1,
-                    backgroundColor: 'brown'
-                },
-                {
-                    label: 'Net Change in forest area in million hectares\n(Deforestation - Forest Regrowth)',
-                    data: [78, 52, 47],
-                    borderWidth: 1,
-                    backgroundColor: 'orange'
-                }
-                ]
+                    label: 'Sea level rise',
+                    data: [45, 30, 15, 0, 15, 30, 50, 90],
+                    borderWidth: 3,
+                    borderColor: 'blue',
+                    backgroundColor: 'blue',
+                    pointBackgroundColor: 'aqua',
+                    pointBorderWidth: 2
+                }]
             },
             options: {
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Average Sea level rise over years (in mm)',
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
@@ -139,19 +144,29 @@
                 }
             }
         });
-        new Chart(edf, {
+
+        new Chart(so, {
             type: 'bar',
             data: {
-                labels: ['Luxembourg', 'Brazil', 'Indonesia', 'Taiwan', 'Belgium', 'Netherlands', 'Switzerland', 'Germany', 'France', 'Spain', 'Sweden', 'United Kingdom', 'Japan', 'United States', 'China', 'South Africa', 'India'],
+                labels: ['Pacific ocean', 'Atlantic Ocean','Indian Ocean','Arctic Ocean','Southern Ocean'],
                 datasets: [{
-                    label: 'Per capita Carbon-dioxide emissions from deforestation for food production',
-                    data: [2.78, 2.71, 1.24, 1.08, 0.97, 0.95, 0.64, 0.51, 0.42, 0.42, 0.41, 0.39, 0.38, 0.35, 0.14, 0.09, 0.08],
-                    borderWidth: 1,
-                    backgroundColor: 'green'
-                }
-                ]
+                        label: 'Sea level rise',
+                        data: [60,50,40,30,20],
+                        borderWidth: 1,
+                        backgroundColor: 'blue'
+                    }
+                    ]
             },
             options: {
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Sea level rise in different oceans(in mm)',
+                    }
+                },
                 indexAxis: 'y',
                 scales: {
                     x: {
@@ -163,12 +178,12 @@
         new Chart(pf, {
             type: 'pie',
             data: {
-                labels: ['Commodity-driven Deforestation', 'Urbanization', 'Agriculture', 'Forestry Production', 'Wildfire'],
+                labels: ['Thermal Expansion', 'Glacier Melting', 'Ice Sheet Melting', 'Landwater Storage', 'Other'],
                 datasets: [{
                     label: 'Various reasons',
                     data: [73, 12, 9, 4, 2],
                     borderWidth: 1,
-                    backgroundColor: ['blue', 'yellow', 'green', 'brown', 'orange']
+                    backgroundColor: ['crimson', 'blue', 'aqua', 'green', 'pink']
                 }
                 ]
             },
@@ -180,7 +195,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Various Reasons of deforestation',
+                        text: 'Various Reasons of Sea Level Rise',
                     }
                 }
             }

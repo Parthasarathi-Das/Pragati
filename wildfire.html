@@ -16,8 +16,8 @@
     <div class="nav" style="background-color: black;">
         <ul>
             <li><a href="home.html">home</a></li>
-            <li class="active"><a href="#">Causes</a></li>
-            <li><a href="#">Effect</a></li>
+            <li ><a href="Causes.html">Causes</a></li>
+            <li class="active"><a href="effect.html">Effect</a></li>
             <li><a href="#">Solution</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Events</a></li>
@@ -29,7 +29,7 @@
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
     </div>
-    <div class="para" style="margin-top: 100px;">
+    <div  style="margin-top: 100px;">
         <h1>Wildfires</h1>
         <p>
             Wildfires are increasing around the globe in frequency, severity and duration, heightening the need to
@@ -40,11 +40,8 @@
             lead. In addition to contaminating the air with toxic pollutants, wildfires also simultaneously impact the
             climate by releasing large quantities of carbon dioxide and other greenhouse gases into the atmosphere.</p>
     </div>
-    <div class="deforest">
+    <div class="mychart">
         <canvas id="deforest"></canvas>
-    </div>
-    <div class="deforest">
-        <canvas id="eforest"></canvas>
     </div>
     <div class="para">
         <h1>Impact and severity</h1>
@@ -71,10 +68,13 @@
             sustainability.
         </p>
     </div>
-    <div class="deforest" style="margin-left: 10vw;">
+    <div class="mychart">
+        <canvas id="eforest"></canvas>
+    </div>
+    <div class="mychart" style="margin-left: 10vw;">
         <canvas id="piforest"></canvas>
     </div>
-    <div>
+    <div class="para">
         <h1>The future</h1>
         <p>
             Protecting natural ecosystems and sustainably managing and re-establishing forests are important ways to
@@ -117,16 +117,10 @@
         new Chart(df, {
             type: 'bar',
             data: {
-                labels: ['1990s', '2000s', '2010s'],
+                labels: ['Brazil','United States','Russia','Canada','Australia','China','India','South Africa','Argentina','Indonesia'],
                 datasets: [{
-                    label: 'Global Deforestation Rate per Decade in million hectares',
-                    data: [158, 151, 110],
-                    borderWidth: 1,
-                    backgroundColor: 'brown'
-                },
-                {
-                    label: 'Net Change in forest area in million hectares\n(Deforestation - Forest Regrowth)',
-                    data: [78, 52, 47],
+                    label: 'number of wildfires',
+                    data: [2454,1956,1456,1256,1156,956,856,756,656,556],
                     borderWidth: 1,
                     backgroundColor: 'orange'
                 }
@@ -137,18 +131,27 @@
                     y: {
                         beginAtZero: true
                     }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Top 10 countries with most wild fires',
+                    }
                 }
             }
         });
         new Chart(edf, {
             type: 'bar',
             data: {
-                labels: ['Luxembourg', 'Brazil', 'Indonesia', 'Taiwan', 'Belgium', 'Netherlands', 'Switzerland', 'Germany', 'France', 'Spain', 'Sweden', 'United Kingdom', 'Japan', 'United States', 'China', 'South Africa', 'India'],
+                labels: ['North America','South America','Europe','Asia','Africa','Oceania'],
                 datasets: [{
-                    label: 'Per capita Carbon-dioxide emissions from deforestation for food production',
-                    data: [2.78, 2.71, 1.24, 1.08, 0.97, 0.95, 0.64, 0.51, 0.42, 0.42, 0.41, 0.39, 0.38, 0.35, 0.14, 0.09, 0.08],
+                    label: 'area burned',
+                    data: [4234567,2145678,1234567,1056789,856789,567890],
                     borderWidth: 1,
-                    backgroundColor: 'green'
+                    backgroundColor: 'rgb(200,10,10)'
                 }
                 ]
             },
@@ -158,18 +161,27 @@
                     x: {
                         beginAtZero: true
                     }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Wildfire impact by region',
+                    }
                 }
             }
         });
         new Chart(pf, {
             type: 'pie',
             data: {
-                labels: ['Commodity-driven Deforestation', 'Urbanization', 'Agriculture', 'Forestry Production', 'Wildfire'],
+                labels: ['Human Activity','Lightning','Drought','Strong Winds','Others'],
                 datasets: [{
-                    label: 'Various reasons',
-                    data: [73, 12, 9, 4, 2],
+                    label: 'number of wildfires',
+                    data: [64515,23456,15678,10234,5678],
                     borderWidth: 1,
-                    backgroundColor: ['blue', 'yellow', 'green', 'brown', 'orange']
+                    backgroundColor: ['pink','blue','yellow','aqua','gray']
                 }
                 ]
             },
@@ -181,7 +193,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Various Reasons of deforestation',
+                        text: 'Various Reasons of wildfires',
                     }
                 }
             }
