@@ -39,10 +39,10 @@
             accumulated heat.</p>
     </div>
     <div class="deforest">
-        <canvas id="deforest"></canvas>
+        <canvas id="temprise"></canvas>
     </div>
     <div class="deforest">
-        <canvas id="eforest"></canvas>
+        <canvas id="trd"></canvas>
     </div>
     <div class="para">
         <h1>Global temperature in 2023</h1>
@@ -105,29 +105,36 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const df = document.getElementById('deforest');
-        const edf = document.getElementById('eforest');
+        const tr = document.getElementById('temprise');
+        const ted = document.getElementById('trd');
         const pf = document.getElementById('piforest').getContext('2d');
 
-        new Chart(df, {
-            type: 'bar',
+        new Chart(tr, {
+            type: 'line',
             data: {
-                labels: ['1990s', '2000s', '2010s'],
+                labels: [ '2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022'],
                 datasets: [{
-                    label: 'Global Deforestation Rate per Decade in million hectares',
-                    data: [158, 151, 110],
-                    borderWidth: 1,
-                    backgroundColor: 'brown'
-                },
-                {
-                    label: 'Net Change in forest area in million hectares\n(Deforestation - Forest Regrowth)',
-                    data: [78, 52, 47],
-                    borderWidth: 1,
-                    backgroundColor: 'orange'
-                }
-                ]
+                    label: 'Average Global Temperature',
+                    data: [14.92,14.94,14.85,14.93,15.03,15.14,15.38,15.23,15.18,15.33,15.29,15.41,15.55],
+                    borderWidth: 3,
+                    borderColor: 'red',
+                    backgroundColor: 'crimson',
+                    // pointBackgroundColor: 'orange',
+                    pointBackgroundColor: 'crimson',
+                    pointBackgroundColor: 'rgb(200,20,20)',
+                    pointBorderWidth: 2
+                }]
             },
             options: {
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Average Temperature of Earth  in degree Celcius',
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
@@ -135,22 +142,20 @@
                 }
             }
         });
-        new Chart(edf, {
+        new Chart(trd, {
             type: 'bar',
             data: {
-                labels: ['Luxembourg', 'Brazil', 'Indonesia', 'Taiwan', 'Belgium', 'Netherlands', 'Switzerland', 'Germany', 'France', 'Spain', 'Sweden', 'United Kingdom', 'Japan', 'United States', 'China', 'South Africa', 'India'],
+                labels: ['1880-1889','1890-1899',''],
                 datasets: [{
-                    label: 'Per capita Carbon-dioxide emissions from deforestation for food production',
+                    label: 'Temperature Increased By Decades',
                     data: [2.78, 2.71, 1.24, 1.08, 0.97, 0.95, 0.64, 0.51, 0.42, 0.42, 0.41, 0.39, 0.38, 0.35, 0.14, 0.09, 0.08],
                     borderWidth: 1,
-                    backgroundColor: 'green'
-                }
-                ]
+                    backgroundColor: 'rgb(254, 161, 1)'
+                }]
             },
             options: {
-                indexAxis: 'y',
                 scales: {
-                    x: {
+                    y:{
                         beginAtZero: true
                     }
                 }
