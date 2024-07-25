@@ -400,15 +400,23 @@ footer{
 
 @media (max-width: 700px){
     .intro1{
-        margin-top: 42vmax;
+        margin-top: 20vmax;
         width: auto;
+        height: auto;
         margin-left: auto;
+        background-color: transparent;
     }
     .intro1 h1{
-        font-size: 20px;
+        font-size: 45px;
+        animation: none;
+        border-right: 0;
+        height: 30vw;
+        overflow:unset;
+        white-space: inherit;
     }
     .intro1 p {
-        font-size: 15px;
+        font-size: 25px;
+        background-color: rgba(0, 0, 55, 0.5) ;
     }
     .exp {
         width: 10vmax;
@@ -416,7 +424,7 @@ footer{
         bottom: 5vmax;
         right: 5vmin;
         font-size: 19px;
-        padding: 20px;
+        padding: 20px 20px 10px 20px;
         
     }
     #space{
@@ -425,12 +433,14 @@ footer{
     }
     .nav{
         width: 100%;
+        background-color: black;
     }
 
     #bar{
         position: absolute;
-        right: auto;
-        padding: 10px;
+        left:auto;
+        padding-top: 15px;
+        padding-left: 30px;
         top: 0px;
         display: block;
         padding: auto;
@@ -448,9 +458,9 @@ footer{
         text-align: center;
         z-index: 998;
     }
-    .trans ul{
+    /* .trans ul{
         background-color:rgba(44, 43, 43, 0.3) ;
-    }
+    } */
     .nav ul li{
         display: block;
         margin-right:50vw ;
@@ -523,5 +533,13 @@ footer{
     .footer-nav ul li{
         width: 100%;
         text-align: center;
+    }
+    .gback{
+        background-image: url('b-1.jpg');
+        background-size: cover;
+    }
+    .yback{
+        background-image: url('b-2.jpg');
+        background-size: cover;
     }
 }
