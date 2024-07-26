@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causes</title>
+    <link rel="stylesheet" href="General.css">
+    <script src="common.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="background-color: rgb(247, 239, 239);">
+    <div class="nav" style="background-color: black;">
+        <ul>
+            <li><a href="home.html">home</a></li>
+            <li class="active"><a href="Causes.html">Causes</a></li>
+            <li><a href="effect.html">Effect</a></li>
+            <li><a href="action.html">Action</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html">Log In</a></li>
+        </ul>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" id="bar" viewBox="0 -960 960 960" width="24px"
+            fill="#e8eaed" onclick=showSidebar()>
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+    </div>
+    <div style="margin-top: 100px;">
+        <h1>Definition of Volcanic Eruption</h1>
+        <p>Volcanic eruption, an eruption of molten rock, hot rock fragments, and hot gases through a volcano, which is
+            a vent in a planet’s or satellite’s crust. Volcanic eruptions can cause disastrous loss of life and
+            property. They range from relatively gentle eruptions, as typically seen in Hawaiian volcanoes, to massively
+            destructive ones, such as the eruption of Vesuvius that destroyed Pompeii in 79 CE. Volcanic eruptions have
+            captured the imagination of people over millennia, and they feature in several mythologies as well as works
+            of fiction. These eruptions also play a role in climate change, with expelled gases such as carbon dioxide
+            contributing to global warming, while ash, dust, and gases such as sulfur dioxide can drive global
+            temperatures down.
+
+
+        </p>
+    </div>
+    <div class="deforest">
+        <canvas id="deforest"></canvas>
+    </div>
+    <div class="deforest">
+        <canvas id="eforest"></canvas>
+    </div>
+    <div class="para">
+        <h1>Dangerous Effect of Volcanic Eruption</h1>
+        <p>
+        <ul>
+            Volcanic Eruption can impact climate in the following ways:
+            <li>
+                <b>Ash and dust:</b>Volcanic ash or dust released into the atmosphere during an eruption can shade
+                sunlight and cause temporary cooling.
+
+            </li>
+            <li> <b>Sulfur emissions:</b>Erupting volcanoes emit sulfur dioxide, which can influence climate.</li>
+            <li> <b> Greenhouse gases:</b>Volcanoes release greenhouse gases such as water vapor and carbon dioxide.
+            </li>
+            <li> <b>
+                    Atmospheric circulation: </b>Major volcanic eruptions can change atmospheric circulation patterns
+                and reduce solar radiation reaching the Earth's surface.</li>
+        </ul>
+        </p>
+    </div>
+    <div class="para">
+        <h1>Reasons of Volcanic Eruption</h1>
+        <p>
+        <ul>
+            <li>Earth’s Interior Structure The Earth’s interior is composed of several distinct layers, each
+                characterized by unique physical and compositional properties.</li>
+            <li>Magma Formation Magma formation is a process that occurs beneath the Earth’s surface, where rocks melt
+                to create a molten mixture of minerals</li>
+            <li>Tectonic Plate Boundaries ...</li>
+            <li>Volcanic Hotspots ...</li>
+            <li>Volcanic Triggering Mechanisms ..</li>
+        </ul>
+        </p>
+    </div>
+    <div class="deforest" style="margin-left: 10vw;">
+        <canvas id="piforest"></canvas>
+    </div>
+    <div>
+        <h1>The future</h1>
+        <p>
+            Tens of thousands of people have evacuated their land in Bali as the nearby volcano Mount Agung angrily
+            spits ash and its magma rises. Many Balinese hold the mountain sacred and accept its occasional outbursts as
+            moral admonishments whereas geologists consider this activity a routine part of Earth’s behavior. But
+            scientists have found another force—climate change—affects the frequency of eruptions. Now a new study shows
+            even relatively minor climate variations may have such an influence. If they are right, today’s global
+            warming could mean more and bigger volcanic eruptions in the future.
+
+            Throughout its history Earth has gone through periods of massive natural climate change such as entering and
+            leaving ice ages. Scientists have noted volcanic eruptions tended to increase as glaciers melted. In a
+            recent study published in Geology researchers looked at smaller-scale changes in glacial coverage to see if
+            these incremental differences had any effect.
+        </p>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="icons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-x"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <p>Copyright &copy; 2022; Designed by <span class="designer"> team pragati</span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const df = document.getElementById('deforest');
+        const edf = document.getElementById('eforest');
+        const pf = document.getElementById('piforest').getContext('2d');
+
+        new Chart(df, {
+            type: 'bar',
+            data: {
+                labels: ['1990s', '2000s', '2010s'],
+                datasets: [{
+                    label: 'Global Deforestation Rate per Decade in million hectares',
+                    data: [158, 151, 110],
+                    borderWidth: 1,
+                    backgroundColor: 'brown'
+                },
+                {
+                    label: 'Net Change in forest area in million hectares\n(Deforestation - Forest Regrowth)',
+                    data: [78, 52, 47],
+                    borderWidth: 1,
+                    backgroundColor: 'orange'
+                }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        new Chart(edf, {
+            type: 'bar',
+            data: {
+                labels: ['Luxembourg', 'Brazil', 'Indonesia', 'Taiwan', 'Belgium', 'Netherlands', 'Switzerland', 'Germany', 'France', 'Spain', 'Sweden', 'United Kingdom', 'Japan', 'United States', 'China', 'South Africa', 'India'],
+                datasets: [{
+                    label: 'Per capita Carbon-dioxide emissions from deforestation for food production',
+                    data: [2.78, 2.71, 1.24, 1.08, 0.97, 0.95, 0.64, 0.51, 0.42, 0.42, 0.41, 0.39, 0.38, 0.35, 0.14, 0.09, 0.08],
+                    borderWidth: 1,
+                    backgroundColor: 'green'
+                }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        new Chart(pf, {
+            type: 'pie',
+            data: {
+                labels: ['Commodity-driven Deforestation', 'Urbanization', 'Agriculture', 'Forestry Production', 'Wildfire'],
+                datasets: [{
+                    label: 'Various reasons',
+                    data: [73, 12, 9, 4, 2],
+                    borderWidth: 1,
+                    backgroundColor: ['blue', 'yellow', 'green', 'brown', 'orange']
+                }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Various Reasons of deforestation',
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

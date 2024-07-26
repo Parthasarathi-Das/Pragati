@@ -16,7 +16,7 @@
     <div class="nav" style="background-color: black;">
         <ul>
             <li><a href="home.html">home</a></li>
-            <li ><a href="Causes.html">Causes</a></li>
+            <li><a href="Causes.html">Causes</a></li>
             <li class="active"><a href="effect.html">Effect</a></li>
             <li><a href="about.html">Action</a></li>
             <li><a href="about.html">About</a></li>
@@ -27,7 +27,7 @@
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
     </div>
-    <div  style="margin-top: 100px;">
+    <div style="margin-top: 100px;">
         <h1>The effect of global warming on mortality</h1>
         <p>
             There is a significant relationship between ambient temperature and mortality. In healthy individuals with
@@ -50,7 +50,7 @@
             Overall, a total of more than 14,000 Americans have died directly from heat-related causes since 1979,
             according to death certificates.</p>
     </div>
-    <div class="mychart" >
+    <div class="mychart">
         <canvas id="piforest"></canvas>
     </div>
     <div class="para">
@@ -71,14 +71,13 @@
     <div class="para">
         <h1>The future</h1>
         <p>
-            Protecting natural ecosystems and sustainably managing and re-establishing forests are important ways to
-            reduce
-            greenhouse gas emissions and slow down temperature rise in the short term by drawing down carbon dioxide
-            from
-            the atmosphere. At the same time, we must deeply and rapidly reduce global greenhouse gas emissions levels
-            from
-            fossil fuels – coal, oil and gas. If we do only the former and not the latter, we risk transforming more and
-            more of our carbon sinks into carbon sources as climate change progresses.</p>
+            WHO’s Global Health Estimates provide the latest available data on causes of death and disability globally,
+            by WHO region and country, by age, sex and by income group.
+
+            These estimates are produced using data from multiple sources, including national vital registration data,
+            latest estimates from WHO technical programmes, United Nations partners and inter-agency groups, the Global
+            Burden of Disease and other scientific studies. Before publishing, the GHE are reviewed by WHO Member States
+            via consultation with national focal points and WHO country and regional offices. </p>
     </div>
     <div class="mychart">
         <canvas id="deforest"></canvas>
@@ -114,10 +113,10 @@
         new Chart(df, {
             type: 'line',
             data: {
-                labels: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019'],
+                labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'],
                 datasets: [{
                     label: 'Number od deaths',
-                    data: [1050,1200,1500,1800,2000,2200,2500,2800,3000,3200],
+                    data: [1050, 1200, 1500, 1800, 2000, 2200, 2500, 2800, 3000, 3200],
                     borderWidth: 3,
                     backgroundColor: 'crimson',
                     borderColor: 'crimson',
@@ -145,12 +144,12 @@
         new Chart(edf, {
             type: 'bar',
             data: {
-                labels: ['Floods','Droughts','Storms','Heatwaves','Wildfires','Landslides'],
+                labels: ['Floods', 'Droughts', 'Storms', 'Heatwaves', 'Wildfires', 'Landslides'],
                 datasets: [{
                     label: 'Number of death',
-                    data: [5500,2000,3500,2200,1000,800],
+                    data: [5500, 2000, 3500, 2200, 1000, 800],
                     borderWidth: 1,
-                    backgroundColor: ['blue','yellow','aqua','red','orange','gray']
+                    backgroundColor: ['blue', 'yellow', 'aqua', 'red', 'orange', 'gray']
                 }
                 ]
             },
@@ -174,12 +173,12 @@
         new Chart(pf, {
             type: 'pie',
             data: {
-                labels: ['Heat Stress','Respiratory Issues','Injuries','Other Causes'],
+                labels: ['Heat Stress', 'Respiratory Issues', 'Injuries', 'Other Causes'],
                 datasets: [{
                     label: 'number of deaths',
-                    data: [2200,1500,1000,1600],
+                    data: [2200, 1500, 1000, 1600],
                     borderWidth: 1,
-                    backgroundColor: ['red','yellow','orange','green']
+                    backgroundColor: ['red', 'yellow', 'orange', 'green']
                 }
                 ]
             },
