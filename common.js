@@ -39,3 +39,20 @@ const goNext = () => {
     count = (count + 1) % n;
     slideImage();
 }
+
+let nam,email,phone, pass1, pass2;
+
+function store() {
+    nam = document.getElementById("name1").value;
+    email = document.getElementById("email1").value;
+    phone = document.getElementById("phone1").value;
+    window.open("PWcreate.html");
+}
+
+function passcheck(){
+    pass1 = document.getElementById("pas1").value;
+    pass2 = document.getElementById("pas2").value;
+    if(pass1 != pass2){
+        window.alert("Please Confirm the Same Password");
+    }
+}

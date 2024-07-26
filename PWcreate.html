@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sign up</title>
+    <title> Create Password</title>
     <link rel="stylesheet" href="General.css">
     <script src="common.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -40,16 +40,16 @@
         <div class="login-input">
             <h4 style="text-align: justify;">Create a strong password <br> 
             (Your password should contain atleast 8 symbols and must contain numbers, alphabets and special characters)</h4>
-            <input type="password" placeholder="Type your Password">
+            <input type="password" placeholder="Type your Password" id="pas1">
         </div>
         
         <div class="login-input">
             <h4 style="text-align: justify;">Confirm your Password </h4>
-            <input type="password" placeholder="Retype your password">
+            <input type="password" placeholder="Retype your password" id="pas2">
         </div>
            <h4><input type="checkbox">I agree to the terms and conditions <br>
             <a href="#"> view terms and conditions</a></h4>
-        <div class="login-btn">
+        <div class="login-btn" id="snup" onclick="passcheck()">
             Sign Up
         </div>
         <!-- <h4>Already have an account? <a href="login.html">Log In</a></h4> -->

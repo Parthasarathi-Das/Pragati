@@ -306,6 +306,7 @@
     border: 2px solid aqua;
     display: inline-block;
     font-size: larger;
+    cursor: pointer;
 }
 .reg-input{
     margin-top: 20px;
@@ -413,7 +414,7 @@ footer{
     justify-content: center;
 }
 .about img{
-    width: 80%;
+    width: 50%;
 }
 
 

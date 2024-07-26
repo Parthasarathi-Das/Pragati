@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
     <link rel="stylesheet" href="General.css">
-    <script src="common.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -39,15 +38,15 @@
         <h1> Sign Up Here</h1>
         <h3>Fill necessary details</h3>
         <div class="login-input">
-            <input type="text" placeholder="Enter your name">
+            <input type="text" placeholder="Enter your name" id="name1">
         </div>
         <div class="login-input">
-            <input type="email" placeholder="Enter your email">
+            <input type="email" placeholder="Enter your email" id="email1">
         </div>
         <div class="login-input">
-            <input type="phone number" placeholder="Enter your phone number">
+            <input type="phone number" placeholder="Enter your phone number" id="phone1">
         </div>
-        <div class="login-btn">
+        <div class="login-btn" id="proceed" onclick="store()">
             Proceed
         </div>
         <h4>Already have an account? <a href="login.html">Log In </a></h4>
@@ -95,6 +94,7 @@
             </div>
         </div>
     </footer>
+    <script src="common.js"></script>
 </body>
 
 </html>
