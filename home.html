@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="General.css">
-    <script src="common.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -110,33 +109,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        const slides = document.querySelectorAll(".slides");
-        var count = 0;
-        slides.forEach(
-            (slide, index) => {
-                slide.style.left = `${index * 100}%`;
-
-            }
-        )
-        const n = slides.length;
-        const slideImage = () => {
-            slides.forEach(
-                (slide) => {
-                    slide.style.transform = `translateX(-${count * 100}%)`;
-                }
-            )
-        }
-        const goPrev = () => {
-            count = Math.abs((count - 1) % n);
-            slideImage();
-        }
-
-        const goNext = () => {
-            count = (count + 1) % n;
-            slideImage();
-        }
-    </script>
+    <script src="common.js"></script>
 </body>
 
 </html>
