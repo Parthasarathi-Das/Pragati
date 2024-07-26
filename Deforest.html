@@ -53,11 +53,8 @@
     <div class="mychart">
         <canvas id="deforest"></canvas>
     </div>
-    <div style="width: 50%; display: inline-block; box-shadow: 0 0 5px gray; margin: 5px;">
-        <canvas id="eforest"></canvas>
-    </div>
-    <div class="para" style="display: inline-block; width: 45%;">
-        <h1 style="display: inline-flex;">Deforestation and climate change</h1>
+    <div class="para">
+        <h1 >Deforestation and climate change</h1>
         <p>
             Burning fossil fuels, in combination with destruction of carbon sinks due to deforestation and other
             activities,
@@ -80,7 +77,7 @@
             reduced
             but not avoided by keeping the rise in global temperature well below 2°C.</p>
     </div>
-    <div class="para">
+    <div >
         <h1>Reasons of Deforestation</h1>
         <p>‘Forest loss’ or ‘tree loss’ captures two fundamental impacts on forest cover: deforestation and forest
             degradation.
@@ -107,9 +104,13 @@
         </ul>
         </p>
     </div>
+    <div class="mychart">
+        <canvas id="eforest"></canvas>
+    </div>
     <div class="mychart" style="margin-left: 10vw;">
         <canvas id="piforest"></canvas>
     </div>
+    
     <div>
         <h1>The future</h1>
         <p>
@@ -202,7 +203,7 @@
             data: {
                 labels: ['Commodity-driven Deforestation', 'Urbanization', 'Agriculture', 'Forestry Production', 'Wildfire'],
                 datasets: [{
-                    label: 'Various reasons',
+                    label: 'Contribution in %',
                     data: [73, 12, 9, 4, 2],
                     borderWidth: 1,
                     backgroundColor: ['blue', 'yellow', 'green', 'brown', 'orange']

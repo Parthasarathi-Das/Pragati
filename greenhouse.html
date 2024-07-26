@@ -45,11 +45,8 @@
 
         </p>
     </div>
-    <div class="deforest">
+    <div class="mychart">
         <canvas id="deforest"></canvas>
-    </div>
-    <div class="deforest">
-        <canvas id="eforest"></canvas>
     </div>
     <div class="para">
         <h1>Greenhouse Effects on climate change</h1>
@@ -66,6 +63,9 @@
             But if the amount of greenhouse gases in the atmosphere changes, the strength of the greenhouse effect
             changes too. This is the cause of human-made climate change: by adding greenhouse gases to the atmosphere,
             we are trapping more heat, and the entire planet gets warmer..</p>
+    </div>
+    <div class="mychart">
+        <canvas id="eforest"></canvas>
     </div>
     <div class="para">
         <h1>Reasons of Greenhouse Effects</h1>
@@ -95,10 +95,10 @@
         </ul>
         </p>
     </div>
-    <div class="deforest" style="margin-left: 10vw;">
+    <div class="mychart" >
         <canvas id="piforest"></canvas>
     </div>
-    <div>
+    <div class="para">
         <h1>The future</h1>
         <p>
             It is the phenomenon of a gradual increase in the average temperature of the Earth’s atmosphere. The main
@@ -142,25 +142,27 @@
         new Chart(df, {
             type: 'bar',
             data: {
-                labels: ['1990s', '2000s', '2010s'],
+                labels: ['Coal', 'Oil', 'Natural gas','Other'],
                 datasets: [{
-                    label: 'Global Deforestation Rate per Decade in million hectares',
-                    data: [158, 151, 110],
+                    label: 'emission in Gt CO2',
+                    data: [14.3, 11.3,7.3,3.6],
                     borderWidth: 1,
-                    backgroundColor: 'brown'
-                },
-                {
-                    label: 'Net Change in forest area in million hectares\n(Deforestation - Forest Regrowth)',
-                    data: [78, 52, 47],
-                    borderWidth: 1,
-                    backgroundColor: 'orange'
-                }
-                ]
+                    backgroundColor: 'gray'
+                }]
             },
             options: {
                 scales: {
                     y: {
                         beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Global Energy related CO2 emissions by fuel',
                     }
                 }
             }
@@ -168,12 +170,12 @@
         new Chart(edf, {
             type: 'bar',
             data: {
-                labels: ['Luxembourg', 'Brazil', 'Indonesia', 'Taiwan', 'Belgium', 'Netherlands', 'Switzerland', 'Germany', 'France', 'Spain', 'Sweden', 'United Kingdom', 'Japan', 'United States', 'China', 'South Africa', 'India'],
+                labels: ['Electricity','Industry','Transportations','Buildings','Others'],
                 datasets: [{
-                    label: 'Per capita Carbon-dioxide emissions from deforestation for food production',
-                    data: [2.78, 2.71, 1.24, 1.08, 0.97, 0.95, 0.64, 0.51, 0.42, 0.42, 0.41, 0.39, 0.38, 0.35, 0.14, 0.09, 0.08],
+                    label: 'Emissions in Gt CO2',
+                    data: [15.6,8.4,7.5,3.5,2.8],
                     borderWidth: 1,
-                    backgroundColor: 'green'
+                    backgroundColor: 'black'
                 }
                 ]
             },
@@ -183,18 +185,27 @@
                     x: {
                         beginAtZero: true
                     }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Global Energy related CO2 emissions by sectors',
+                    }
                 }
             }
         });
         new Chart(pf, {
             type: 'pie',
             data: {
-                labels: ['Commodity-driven Deforestation', 'Urbanization', 'Agriculture', 'Forestry Production', 'Wildfire'],
+                labels: ['CO2', 'CH4', 'N2O', 'O3', 'CFC'],
                 datasets: [{
-                    label: 'Various reasons',
-                    data: [73, 12, 9, 4, 2],
+                    label: 'concentration in %',
+                    data: [85.4, 10.3, 3.4,0.5,0.4 ],
                     borderWidth: 1,
-                    backgroundColor: ['blue', 'yellow', 'green', 'brown', 'orange']
+                    backgroundColor: ['gray', 'yellow', 'orange', 'aqua', 'blue']
                 }
                 ]
             },
@@ -206,7 +217,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Various Reasons of deforestation',
+                        text: 'Green House gas Concentration in atmosphere',
                     }
                 }
             }

@@ -52,11 +52,8 @@
 
         </p>
     </div>
-    <div class="deforest">
+    <div class="mychart">
         <canvas id="deforest"></canvas>
-    </div>
-    <div class="deforest">
-        <canvas id="eforest"></canvas>
     </div>
     <div class="para">
         <h1>Climate Changes for Ozone Deplation</h1>
@@ -93,10 +90,10 @@
         </ul>
         </p>
     </div>
-    <div class="deforest" style="margin-left: 10vw;">
-        <canvas id="piforest"></canvas>
+    <div class="mychart">
+        <canvas id="eforest"></canvas>
     </div>
-    <div>
+    <div class="para">
         <h1>The future</h1>
         <p>
             In a report published every four years on the progress of the Montreal Protocol, the panel confirmed the
@@ -119,6 +116,9 @@
             In a tweet on Tuesday, the UN Secretary-General António Guterres said that the restoration of the ozone
             layer was "an encouraging example of what the world can achieve when we work together".
         </p>
+    </div>
+    <div class="mychart">
+        <canvas id="piforest"></canvas>
     </div>
     <footer>
         <div class="footer-container">
@@ -151,18 +151,12 @@
         new Chart(df, {
             type: 'bar',
             data: {
-                labels: ['1990s', '2000s', '2010s'],
+                labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
                 datasets: [{
-                    label: 'Global Deforestation Rate per Decade in million hectares',
-                    data: [158, 151, 110],
+                    label: 'Ozone layer thickness in Dobson Units',
+                    data: [220,215,210,205,200,195,190,185,190,195,200,205],
                     borderWidth: 1,
-                    backgroundColor: 'brown'
-                },
-                {
-                    label: 'Net Change in forest area in million hectares\n(Deforestation - Forest Regrowth)',
-                    data: [78, 52, 47],
-                    borderWidth: 1,
-                    backgroundColor: 'orange'
+                    backgroundColor: 'rgb(20,200,20)'
                 }
                 ]
             },
@@ -171,26 +165,45 @@
                     y: {
                         beginAtZero: true
                     }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Ozone Layer Depletion by month',
+                    }
                 }
             }
         });
         new Chart(edf, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['Luxembourg', 'Brazil', 'Indonesia', 'Taiwan', 'Belgium', 'Netherlands', 'Switzerland', 'Germany', 'France', 'Spain', 'Sweden', 'United Kingdom', 'Japan', 'United States', 'China', 'South Africa', 'India'],
+                labels: ['1960','1970','1980','1990','2000','2010','2020'],
                 datasets: [{
-                    label: 'Per capita Carbon-dioxide emissions from deforestation for food production',
-                    data: [2.78, 2.71, 1.24, 1.08, 0.97, 0.95, 0.64, 0.51, 0.42, 0.42, 0.41, 0.39, 0.38, 0.35, 0.14, 0.09, 0.08],
-                    borderWidth: 1,
-                    backgroundColor: 'green'
+                    label: 'Ozone Layer thickness in Dobson Units',
+                    data: [300,290,270,240,210,205,225],
+                    borderWidth: 3,
+                    backgroundColor: 'cyan',
+                    borderColor: 'cyan',
+                    pointBackgroundColor: 'blue'
                 }
                 ]
             },
             options: {
-                indexAxis: 'y',
                 scales: {
-                    x: {
+                    y: {
                         beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Ozone Layer thickness over time',
                     }
                 }
             }
@@ -198,12 +211,12 @@
         new Chart(pf, {
             type: 'pie',
             data: {
-                labels: ['Commodity-driven Deforestation', 'Urbanization', 'Agriculture', 'Forestry Production', 'Wildfire'],
+                labels: ['CFCs', 'Halons', 'HCFCs', 'Methyl Bromide', 'Methyl Chloride','Nitrous Oxide'],
                 datasets: [{
-                    label: 'Various reasons',
-                    data: [73, 12, 9, 4, 2],
+                    label: 'Percentage',
+                    data: [44,23,16,10,4,3],
                     borderWidth: 1,
-                    backgroundColor: ['blue', 'yellow', 'green', 'brown', 'orange']
+                    backgroundColor: ['blue', 'green', 'violet', 'crimson', 'gray','cyan']
                 }
                 ]
             },
@@ -215,7 +228,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Various Reasons of deforestation',
+                        text: 'Various Ozone Depleting Substances',
                     }
                 }
             }

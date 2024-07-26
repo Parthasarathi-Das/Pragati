@@ -43,16 +43,10 @@
             the 2022 UN projections overestimated fertility rates by 10 to 20% and are already outdated, that the global
             fertility rate has possibly already fallen below the sub-replacement fertility level for the first time in
             human history, and that the global population will peak at approximately 9.5 billion by 2061.
-
-
-
         </p>
     </div>
-    <div class="deforest">
+    <div class="mychart">
         <canvas id="deforest"></canvas>
-    </div>
-    <div class="deforest">
-        <canvas id="eforest"></canvas>
     </div>
     <div class="para">
         <h1>overpopulation effects on climate change</h1>
@@ -129,10 +123,13 @@
         </ul>
         </p>
     </div>
-    <div class="deforest" style="margin-left: 10vw;">
+    <div class="mychart">
+        <canvas id="eforest"></canvas>
+    </div>
+    <div class="mychart">
         <canvas id="piforest"></canvas>
     </div>
-    <div>
+    <div class="para">
         <h1>The future</h1>
         <p>
             The effects of overpopulation are quite severe. The first of these is the depletion of resources. The Earth
@@ -177,20 +174,16 @@
         const pf = document.getElementById('piforest').getContext('2d');
 
         new Chart(df, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['1990s', '2000s', '2010s'],
+                labels: ['1950','1960','1970','1980','1990','2000','2010','2020'],
                 datasets: [{
-                    label: 'Global Deforestation Rate per Decade in million hectares',
-                    data: [158, 151, 110],
-                    borderWidth: 1,
-                    backgroundColor: 'brown'
-                },
-                {
-                    label: 'Net Change in forest area in million hectares\n(Deforestation - Forest Regrowth)',
-                    data: [78, 52, 47],
-                    borderWidth: 1,
-                    backgroundColor: 'orange'
+                    label: 'Population in billions',
+                    data: [2.55,3.03,3.71,4.45,5.32,6.14,6.96,7.35,7.79],
+                    borderWidth: 3,
+                    backgroundColor: 'black',
+                    borderColor: 'black',
+                    pointBackgroundColor: 'gray'
                 }
                 ]
             },
@@ -199,26 +192,55 @@
                     y: {
                         beginAtZero: true
                     }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'World Population growth',
+                    }
                 }
             }
         });
         new Chart(edf, {
             type: 'bar',
             data: {
-                labels: ['Luxembourg', 'Brazil', 'Indonesia', 'Taiwan', 'Belgium', 'Netherlands', 'Switzerland', 'Germany', 'France', 'Spain', 'Sweden', 'United Kingdom', 'Japan', 'United States', 'China', 'South Africa', 'India'],
+                labels: ['China','India','United States','Indonesia','Pakistan'],
                 datasets: [{
-                    label: 'Per capita Carbon-dioxide emissions from deforestation for food production',
-                    data: [2.78, 2.71, 1.24, 1.08, 0.97, 0.95, 0.64, 0.51, 0.42, 0.42, 0.41, 0.39, 0.38, 0.35, 0.14, 0.09, 0.08],
+                    label: 'population in millions (year 2000)',
+                    data: [1290,1053,282,206,156],
                     borderWidth: 1,
-                    backgroundColor: 'green'
+                    backgroundColor: 'rgb(40,200,40)'
+                },
+                {
+                    label: 'population in millions (year 2010)',
+                    data: [1344,1244,308,238,174],
+                    borderWidth: 1,
+                    backgroundColor: 'orange'
+                },
+                {
+                    label: 'population in millions (year 2020)',
+                    data: [1439,1380,331,273,216],
+                    borderWidth: 1,
+                    backgroundColor: 'crimson'
                 }
                 ]
             },
             options: {
-                indexAxis: 'y',
                 scales: {
-                    x: {
+                    y: {
                         beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Top 5 most populated countries',
                     }
                 }
             }
@@ -226,12 +248,12 @@
         new Chart(pf, {
             type: 'pie',
             data: {
-                labels: ['Commodity-driven Deforestation', 'Urbanization', 'Agriculture', 'Forestry Production', 'Wildfire'],
+                labels: ['Asia', 'Africa', 'Europe', 'North America', 'South America','Oceania'],
                 datasets: [{
-                    label: 'Various reasons',
-                    data: [73, 12, 9, 4, 2],
+                    label: 'Population in millions',
+                    data: [4641,1344,747,582,423,43],
                     borderWidth: 1,
-                    backgroundColor: ['blue', 'yellow', 'green', 'brown', 'orange']
+                    backgroundColor: ['aqua', 'yellow', 'pink', 'crimson', 'green','blue']
                 }
                 ]
             },
@@ -243,7 +265,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Various Reasons of deforestation',
+                        text: 'World Population by continent',
                     }
                 }
             }
