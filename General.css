@@ -490,8 +490,39 @@ footer{
     margin-left: 2vmin;
     border-radius: 10px;
 }
-
-
+.team{
+    margin: 75px 0;
+}
+.team h1{
+    text-align: center;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
+.member{
+    display: inline-block;
+    /* padding: 10px; */
+    box-shadow: 0 0 5px black;
+    width: 20vmax;
+    height: 30vmax;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 7vw;
+    margin-bottom: 4vh;
+    border-radius: 10px;
+}
+.member .img-box{
+    height: 20vmax;
+    width: 20vmax;
+    margin-top: auto;
+}
+.member .img-box img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.member h3,p{
+    text-align: center;
+}
 
 
 
@@ -668,6 +699,7 @@ footer{
     .calc ul li{
         margin: 0;
     }
+<<<<<<< HEAD
 }
 
 .cont-cont{
@@ -731,4 +763,16 @@ footer{
 }
 .cont-right img{
     width: 400px;
+=======
+    .member{
+        width: 80%;
+        height: auto;
+        margin-left: 5%;
+    }
+    .member .img-box{
+        margin-left: 10vw;
+        width: 60vw;
+        height: 60vw;
+    }
+>>>>>>> e03b256bc1f00ba669ab6e5e5acc811699b291c7
 }
