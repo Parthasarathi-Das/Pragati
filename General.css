@@ -432,6 +432,13 @@ footer{
     animation: cc 0.6s ease-in infinite;
 }
 
+footer{
+    position: absolute;
+            top:auto;
+            width: 100%;
+            left: 0;
+}
+
 @keyframes cc{
     10%{
         color: violet;
@@ -699,7 +706,19 @@ footer{
     .calc ul li{
         margin: 0;
     }
-<<<<<<< HEAD
+    .cont-right img{
+        display: none;
+    }
+    .member{
+        height: auto;
+        width: 80%;
+        margin-left: 5%;
+    }
+    .member .img-box{
+        width: 60vmin;
+        height: 60vmin;
+        margin-left: 10%;
+    }
 }
 
 .cont-cont{
@@ -763,16 +782,4 @@ footer{
 }
 .cont-right img{
     width: 400px;
-=======
-    .member{
-        width: 80%;
-        height: auto;
-        margin-left: 5%;
-    }
-    .member .img-box{
-        margin-left: 10vw;
-        width: 60vw;
-        height: 60vw;
-    }
->>>>>>> e03b256bc1f00ba669ab6e5e5acc811699b291c7
 }
