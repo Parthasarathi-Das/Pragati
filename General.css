@@ -434,9 +434,9 @@ footer{
 
 footer{
     position: absolute;
-            top:auto;
-            width: 100%;
-            left: 0;
+    top:auto;
+    width: 100vw;
+    left: 0;
 }
 
 @keyframes cc{
