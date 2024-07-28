@@ -126,6 +126,10 @@
     border-radius: 5px;
 }
 
+.exp a{
+    color: white;
+    text-shadow:  0 0 10px rgb(132, 226, 255);
+}
 .exp:hover {
     box-shadow: 0 0 30px rgb(132, 226, 255);
     background-color: rgba(0, 0, 255, 0.538);
