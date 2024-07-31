@@ -653,10 +653,10 @@ li{
     }
     .mychart{
         width: 90%;
-        height: auto;
+        
     }
-    .deforest canvas{
-        height: auto;
+    .mychart canvas{
+        height: 35vh;
     }
     .para{
         display: block;
