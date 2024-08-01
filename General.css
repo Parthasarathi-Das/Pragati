@@ -278,6 +278,7 @@
     text-align: center;
     padding: 10px;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.477);
 }
 
 .login-input{
@@ -480,7 +481,7 @@ footer{
     padding: 3%;
     /* justify-content: center; */
     margin-bottom: 100px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.711);
 }
 .calc label, input, select, .out, li{
     font-size: 2.5vmin;
@@ -554,9 +555,24 @@ li{
     text-align: center;
     justify-content: center;
 }
-.go a{
+.go a, .bk a{
     text-decoration: none;
     color: rgb(1, 1, 86);
+}
+
+.bk{
+    width: 100px;
+    height: 60px;
+    padding: 10px;
+    font-size: large;
+    position: fixed;
+    bottom: 20vh;
+    left: 0;
+    z-index: 999;
+    background-color: cyan;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
 }
 
 
