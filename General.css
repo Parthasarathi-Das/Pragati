@@ -799,9 +799,9 @@ li{
         margin-left: 10%;
     }
     .symbol{
-        margin-left: 1%;
-        height: 90vmin;
-        width: 90vmin;
+        margin-left: 25%;
+        height: 50vmin;
+        width: 50vmin;
     }
 }
 
