@@ -575,7 +575,42 @@ li{
     justify-content: center;
 }
 
+.symbol{
+    background-image: url('Logo.png');
+    /* display: block; */
+    margin-top: 100px;
+    height: 28vw;
+    width: 30vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border: 2px solid black; */
+    margin-left: 34vw;
+}
 
+.mini-cont{
+    width: 44px;
+    height: 44px;
+    top: 15px;
+    right: 20px ;
+    position: absolute;
+    /* background-color: white; */
+    border-radius: 50%;
+    background-color: white;
+    /* background-image: linear-gradient(45deg,rgb(0, 136, 255),rgb(0, 255, 238),rgb(0, 255, 89)); */
+}
+
+.mini-logo{
+    background-image: url('mini.jpg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.mini-logo a{
+    color: transparent;
+    font-size: 25px;
+}
 
 
 @media (max-width: 1000px){
@@ -761,6 +796,11 @@ li{
         width: 60vmin;
         height: 60vmin;
         margin-left: 10%;
+    }
+    .symbol{
+        margin-left: 1%;
+        height: 90vmin;
+        width: 90vmin;
     }
 }
 
